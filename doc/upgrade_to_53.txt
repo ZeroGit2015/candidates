@@ -1,0 +1,55 @@
+laravel 5.2 => 5.3
+
+1) app/routes.php => /routes/web.php
+
+2) Route::controller удалено
+
+ Route::controller('/candidates/{id_candidate?}/{operation?}', 'CandidatesController');
+
+ Route::get('/candidates/{id_candidate?}/{operation?}', 'CandidatesController@getIndex');
+ Route::post('/candidates/{id_candidate?}/{operation?}', 'CandidatesController@postIndex');
+ Route::delete('/candidates/{id_candidate?}/{operation?}', 'CandidatesController@deleteIndex');
+
+3)     EventServiceProvider.php
+        boot - без параметров
+
+4) /logout теперь только по post или
+ Route::get('/logout' , 'Auth\LoginController@logout');
+
+
+5) Смена корневой папки:
+ В /htdocs/index.php :
+
+function public_path($path = '')
+{
+    return realpath(__DIR__);
+}
+
+
+6) Настройка mysql на нестрогие запросы(для frozen administrator):
+ database.php strict=>  false;
+
+7) use Illuminate\Support\Facades\Hash; в модели User, так как не работала установка пароля.
+
+8) Установить локаль в config/app.php
+
+9) Наименование задачи в config/app.php name
+
+10) Обратный email в config/mail.php from
+
+11)	protected $redirectTo = '/'; в auth контроллерах
+
+12) Убрать регистрацию. В auth/RegisterController.php
+
+    // Отключение регистрации
+	public function showRegistrationForm()
+	{
+    	return redirect('login');
+	}
+
+	public function register()
+	{
+
+	}
+
+

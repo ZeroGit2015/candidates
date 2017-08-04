@@ -1,0 +1,4 @@
+1) Замена шаблона писем и перевод писем reset password смотри /app/User.php 
+2) Установить локаль ru в /config/app.php
+3) Файлы переводов сообщений системы: /resources/lang/ru 
+

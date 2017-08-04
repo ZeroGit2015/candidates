@@ -1,0 +1,5 @@
+﻿1. Установить composer в usr/local/bin
+2. Переименовать cpmposer.phar в composer 
+	mv composer.phar composer
+3. Установить параметр exitable:
+	chmod +x /usr/local/bin/composer
